@@ -49,7 +49,6 @@ function draw() {
   translate(centre.x, centre.y);
   scale(zoom.value());
   
-  // Calculate the center's coordinate under current zoom
   let pivotX = centre.x;
   let pivotY = centre.y;
   
@@ -80,7 +79,6 @@ function draw() {
     line(-10, 0, 10, 0);
     strokeWeight(0);
   }
-  // ——————————————————————————————————————————————
   
   // Update the position of balls
   balls.forEach((p) => {
