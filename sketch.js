@@ -79,6 +79,7 @@ function draw() {
     line(-10, 0, 10, 0);
     strokeWeight(0);
   }
+  // ——————————————————————————————————————————————
   
   // Update the position of balls
   balls.forEach((p) => {
@@ -138,13 +139,14 @@ function handleTranslation() {
   if (keyIsDown(DOWN_ARROW) || keyIsDown(83))  centre.y -= step;
 }
 
-// Toggles showVelocity
 function keyPressed() {
   if (key == 'v') {
     toggleVelocity();
   }
 }
 
+
+// Toggles showVelocity
 function toggleVelocity() {
   showVelocity ^= 1;
   velocityButton.html(showVelocity == 0 ? 'show arrow(v)' : 'no arrow(v)');
