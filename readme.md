@@ -1,0 +1,77 @@
+# Gravitational Attractor Simulation
+
+An interactive gravitational simulation built with p5.js, where you can add, remove, and observe attractors with adjustable gravity, zoom, and velocity display.
+
+## 🔗 Demo
+
+View the live demo on GitHub Pages:
+
+```
+https://chenweilian0419.github.io/CEP_WA2/
+```
+
+*(Enable Pages in ****Settings → Pages****, source: **`main`** branch, root folder.)*
+
+## 📂 Repository Structure
+
+```
+CEP_WA2/
+├── index.html        # Main HTML file
+├── style.css         # Styling for canvas and controls
+├── sketch.js         # p5.js sketch and interaction logic
+├── attractor.js      # Attractor class definition
+├── p5.js             # p5.js core library
+└── p5.sound.min.js   # p5.js sound library (included)
+```
+
+## 🚀 Installation & Setup
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/chenweilian0419/CEP_WA2.git
+   cd CEP_WA2
+   ```
+
+2. **Serve locally** (recommended for optimal performance):
+
+   ```bash
+   npx http-server .
+   # Visit http://localhost:8080 in your browser
+   ```
+
+3. Alternatively, simply **open** `index.html` in your browser.
+
+## 🎮 Controls & Interaction
+
+- **Click Canvas**: Add a new attractor at cursor (or remove if clicking on an existing one).
+- **Zoom Slider** / **Mouse Wheel**: Zoom in/out.
+- **Gravity Slider**: Adjust the gravitational strength.
+- **Pan View**: Arrow keys or `W`/`A`/`S`/`D`.
+- **Toggle Velocity Arrows**: Click the `no arrow(v)` button or press ``.
+
+## 🛠️ Features
+
+- **Trails**: Each attractor leaves a fading trail to visualize its path.
+- **Collision & Merge**: Attractors merge on collision, conserving momentum.
+- **Off-Canvas Indicator**: Arrow points to attractors outside the viewport.
+
+## 🧩 Dependencies
+
+- [p5.js](https://p5js.org/)
+- [p5.sound](https://p5js.org/reference/#/libraries/p5.sound)
+
+*(Both libraries are included locally for offline use.)*
+
+## 🤝 Contributing
+
+Feedback, issues, and pull requests are welcome! Please open an issue or submit a PR on GitHub.
+
+## 📄 License
+
+This project is released under the **MIT License**.
+
+---
+
+*© 2025 chenweilian0419*
+
