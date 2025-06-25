@@ -63,14 +63,6 @@ CEP_WA2/
 
 *(Both libraries are included locally for offline use.)*
 
-## 🤝 Contributing
-
-Feedback, issues, and pull requests are welcome! Please open an issue or submit a PR on GitHub.
-
-## 📄 License
-
-This project is released under the **MIT License**.
-
 ---
 
 *© 2025 chenweilian0419*
