@@ -44,42 +44,19 @@ function draw() {
   text("zoom(scroll): ", 10, 10);
   text("gravity strength: ", 230, 10);
 
-  // Setting origin at centre for translating and scaling
+  // Translating and scaling
   handleTranslation();
-  translate(centre.x, centre.y);
+  // Translate to the center first to zoom and draw zoom pivot
+  translate(width/2, height/2);
+  // Draws the zoom pivot for reference
+  stroke(250, 100, 0, 200)
   scale(zoom.value());
-  
-  let pivotX = centre.x;
-  let pivotY = centre.y;
-  
-  if (pivotX < 0 || pivotX > width || pivotY < 0 || pivotY > height) {
-    // Draw an off-canvas arrow pointing to the pivot
-    push();
-    resetMatrix();
-    // clamp to border
-    let edgeX = constrain(pivotX, 10, width  - 10);
-    let edgeY = constrain(pivotY, 10, height - 10);
-    translate(edgeX, edgeY);
-
-    // point at the pivot
-    let ang = atan2(pivotY - edgeY, pivotX - edgeX);
-    rotate(ang);
-
-    noStroke();
-    fill("orange")
-    triangle(-10, -8, -10, 8, 10, 0);
-
-    pop();
-  }
-  else {
-    // Draws the zoom pivot for reference
-    stroke("orange")
-    strokeWeight(3)
-    line(0, -10, 0, 10);
-    line(-10, 0, 10, 0);
-    strokeWeight(0);
-  }
-  // ——————————————————————————————————————————————
+  strokeWeight(3)
+  line(0, -10, 0, 10);
+  line(-10, 0, 10, 0);
+  strokeWeight(0);
+  // Actually translating to center
+  translate(centre.x - width/2, centre.y - height/2);
   
   // Update the position of balls
   balls.forEach((p) => {
