@@ -55,8 +55,10 @@ function draw() {
   line(0, -10, 0, 10);
   line(-10, 0, 10, 0);
   strokeWeight(0);
-  // Actually translating to center
-  translate(centre.x - width/2, centre.y - height/2);
+  // Actually do translating and scaling
+  resetMatrix();
+  translate(centre.x, centre.y);
+  scale(zoom.value());
   
   // Update the position of balls
   balls.forEach((p) => {
