@@ -49,12 +49,14 @@ class Attractor {
   
   display() {
     strokeWeight(0);
+    // Trail is drawn before the actual object to prevent trail from covering the object itself.
     for (let i = 0; i < this.trail.length; i++) {
       // Trail will increasing transparency and size
       this.col.setAlpha(i)
       fill(this.col);
       circle(this.trail[i].x, this.trail[i].y, this.r * 2 / (trailLength+10) * (i+10));
     }
+    // Drawing the ball
     strokeWeight(2);
     stroke(0);
     this.col.setAlpha(255);
@@ -72,9 +74,10 @@ class Attractor {
     stroke(col)
     fill(col)
     // Constraining magnitude to prevent extreme values like an arrow with length 400
+    // Weird manupilation but its for better visual effects.
     vec.setMag(vec.mag() + 0.1);
     vec.mult(this.r)
-    vec.setMag(constrain(vec.mag(), 10, 100))
+    vec.setMag(constrain(vec.mag(), 10, 120))
     strokeWeight(2);
     translate(this.position);
     line(0, 0, vec.x, vec.y);
@@ -96,7 +99,7 @@ class Attractor {
     this.velocity.x = xVel;
     this.velocity.y = yVel;
     
-    //
+    // Readjusting mass and radius
     this.mass += object.mass;
     this.r = sqrt(this.mass);
   }
