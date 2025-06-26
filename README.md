@@ -54,7 +54,6 @@ CEP_WA2/
 
 - **Trails**: Each attractor leaves a fading trail to visualize its path.
 - **Collision & Merge**: Attractors merge on collision, conserving momentum.
-- **Off-Canvas Indicator**: Arrow points to attractors outside the viewport.
 
 ## 🧩 Dependencies
 
