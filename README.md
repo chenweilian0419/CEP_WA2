@@ -8,7 +8,6 @@ View the live demo on Youtube
 
 ```
 https://www.youtube.com/watch?v=7aZ7zAnE7GY)![image](https://github.com/user-attachments/assets/2b5ba693-465c-4c8a-9b2f-7e460122f63b
-
 ```
 
 *(Enable Pages in ****Settings → Pages****, source: **`main`** branch, root folder.)*
@@ -34,7 +33,7 @@ CEP_WA2/
    cd CEP_WA2
    ```
 
-2. **Serve locally** (recommended for optimal performance):
+2. **Serve locally**:
 
    ```bash
    npx http-server .
@@ -59,9 +58,6 @@ CEP_WA2/
 ## 🧩 Dependencies
 
 - [p5.js](https://p5js.org/)
-- [p5.sound](https://p5js.org/reference/#/libraries/p5.sound)
-
-*(Both libraries are included locally for offline use.)*
 
 ---
 
