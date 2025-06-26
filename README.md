@@ -4,10 +4,11 @@ An interactive gravitational simulation built with p5.js, where you can add, rem
 
 ## 🔗 Demo
 
-View the live demo on GitHub Pages:
+View the live demo on Youtube
 
 ```
-https://chenweilian0419.github.io/CEP_WA2/
+(https://www.youtube.com/watch?v=7aZ7zAnE7GY)![image](https://github.com/user-attachments/assets/2b5ba693-465c-4c8a-9b2f-7e460122f63b)
+
 ```
 
 *(Enable Pages in ****Settings → Pages****, source: **`main`** branch, root folder.)*
