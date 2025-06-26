@@ -7,7 +7,7 @@ An interactive gravitational simulation built with p5.js, where you can add, rem
 View the live demo on Youtube
 
 ```
-(https://www.youtube.com/watch?v=7aZ7zAnE7GY)![image](https://github.com/user-attachments/assets/2b5ba693-465c-4c8a-9b2f-7e460122f63b)
+https://www.youtube.com/watch?v=7aZ7zAnE7GY)![image](https://github.com/user-attachments/assets/2b5ba693-465c-4c8a-9b2f-7e460122f63b
 
 ```
 
