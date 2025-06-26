@@ -66,8 +66,11 @@ function draw() {
   // Applies gravitational force
   for (let i = 0; i < balls.length; i++) {
     balls.forEach((p) => {
-      let force = p.calculateAttraction(balls[i]);
-      balls[i].applyForce(force);
+      // Of course we dont calculate gravitational force between one object and itself
+      if(p != balls[i]) {
+        let force = p.calculateAttraction(balls[i]);
+        balls[i].applyForce(force);
+      }
     });
   }
   for (let i = 0; i < balls.length; i++) {
@@ -134,6 +137,7 @@ function mouseWheel(event) {
   // Allows mouse wheel to control the zoom slider
   let delta = -event.delta / 2000;
   let current = zoom.value();
+  // Constraining the value of zoom
   zoom.value(constrain(current + delta, zoom.elt.min, zoom.elt.max));
   return false;
 }
