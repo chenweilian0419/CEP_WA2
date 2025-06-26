@@ -1,6 +1,6 @@
 # Gravitational Attractor Simulation
 
-An interactive gravitational simulation built with p5.js, where you can add, remove, and observe attractors with adjustable gravity, zoom, and velocity display.
+An interactive gravitational simulation built with p5.js, where you can add, remove, and observe attractors with adjustable gravity, zoom, translation and velocity display.
 
 ## 🔗 Demo
 
@@ -9,8 +9,6 @@ View the live demo on Youtube
 ```
 https://www.youtube.com/watch?v=7aZ7zAnE7GY
 ```
-
-*(Enable Pages in ****Settings → Pages****, source: **`main`** branch, root folder.)*
 
 ## 📂 Repository Structure
 
