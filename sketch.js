@@ -9,7 +9,7 @@ let gravity = 1;
 let gravStrength;
 let showVelocity = 1;
 // Position of Centre
-let centre;
+let pivot;
 // A slider to control the size of the field (Or actually changing the size and position of the balls)
 let zoom;
 
@@ -17,7 +17,7 @@ function setup() {
   createCanvas(600, 600);
 
   // Initialising the Sliders and Buttons
-  zoom = createSlider(0.4, 1.5, 1, 0.05);
+  zoom = createSlider(0.3, 1.5, 1, 0.05);
   zoom.position(120, 10);
   zoom.size(80);
   gravStrength = createSlider(0.5, 5, 1, 0.1);
@@ -30,15 +30,15 @@ function setup() {
   textSize(19);
   textAlign(LEFT, TOP);
   
-  // Initialise center
-  centre = createVector(width/2, height/2);
+  // Initialise the pivot for translating around
+  pivot = createVector(0, 0);
 }
 
 function draw() {
   // Changing gravity to the current strength value
   gravity = gravStrength.value();
-  background(40);
-  translate(0, 0);
+  background(35);
+  resetMatrix()
   // Putting description texts
   fill("white")
   text("zoom(scroll): ", 10, 10);
@@ -46,7 +46,7 @@ function draw() {
 
   // Translating and scaling
   handleTranslation();
-  // Translate to the center first to zoom and draw zoom pivot
+  // Translate to the centre to zoom and draw zoom pivot cross in the centre
   translate(width/2, height/2);
   // Draws the zoom pivot for reference
   stroke(250, 100, 0, 200)
@@ -55,11 +55,8 @@ function draw() {
   line(0, -10, 0, 10);
   line(-10, 0, 10, 0);
   strokeWeight(0);
-  // Actually do translating and scaling
-  resetMatrix();
-  translate(centre.x, centre.y);
-  scale(zoom.value());
-  
+  // Actually translate to the centre we want
+  translate(pivot.x, pivot.y);
   // Update the position of balls
   balls.forEach((p) => {
     p.update();
@@ -93,8 +90,8 @@ function draw() {
 function mouseClicked() {
   if (cooldown <= 0) {
     // Finding the actual mouseX after removing effect of translating and scaling.
-    let mX = (mouseX - centre.x) / zoom.value(),
-        mY = (mouseY - centre.y) / zoom.value();
+    let mX = (mouseX - width/2) / zoom.value() - pivot.x,
+        mY = (mouseY - height/2) / zoom.value() - pivot.y;
     for (let i = 0; i < balls.length; i++) {
       // Determine whether the mouse is inside the ball
       if (p5.Vector.dist(balls[i].position, createVector(mX, mY)) < balls[i].r) {
@@ -112,10 +109,10 @@ function mouseClicked() {
 function handleTranslation() {
   let step = 5 / zoom.value(); // Scale movement so it's consistent at different zooms
   // The directions are opposite because you are moving background
-  if (keyIsDown(LEFT_ARROW) || keyIsDown(65))  centre.x += step;
-  if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) centre.x -= step;
-  if (keyIsDown(UP_ARROW) || keyIsDown(87))    centre.y += step;
-  if (keyIsDown(DOWN_ARROW) || keyIsDown(83))  centre.y -= step;
+  if (keyIsDown(LEFT_ARROW) || keyIsDown(65))  pivot.x += step;
+  if (keyIsDown(RIGHT_ARROW) || keyIsDown(68)) pivot.x -= step;
+  if (keyIsDown(UP_ARROW) || keyIsDown(87))    pivot.y += step;
+  if (keyIsDown(DOWN_ARROW) || keyIsDown(83))  pivot.y -= step;
 }
 
 function keyPressed() {
