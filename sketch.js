@@ -7,8 +7,9 @@ let cooldown = 0;
 let gravity = 1;
 // A slider to control the value of gravity
 let gravStrength;
+// A variable to keep track of, like, what its name suggests
 let showVelocity = 1;
-// Position of Centre
+// Position of pivot for translating
 let pivot;
 // A slider to control the size of the field (Or actually changing the size and position of the balls)
 let zoom;
@@ -48,9 +49,9 @@ function draw() {
   handleTranslation();
   // Translate to the centre to zoom and draw zoom pivot cross in the centre
   translate(width/2, height/2);
+  scale(zoom.value());
   // Draws the zoom pivot for reference
   stroke(250, 100, 0, 200)
-  scale(zoom.value());
   strokeWeight(3)
   line(0, -10, 0, 10);
   line(-10, 0, 10, 0);
@@ -115,6 +116,7 @@ function handleTranslation() {
   if (keyIsDown(DOWN_ARROW) || keyIsDown(83))  pivot.y -= step;
 }
 
+// Shortcut using key 'v'
 function keyPressed() {
   if (key == 'v') {
     toggleVelocity();
